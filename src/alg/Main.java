@@ -8,14 +8,12 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
-    private static int junctions[][];
+    private static int[][] junctions;
     private static int yDimension;
     private static int XDimension;
     private static int minimalDistance;
     private static int numberOfStations;
     private static int currentMinimalValue;
-    private static boolean[] xOccupied;
-    private static boolean[] yOccupied;
     private static int lowestCostCrossroad;
 
     public static void main(String[] args) throws IOException {
@@ -26,13 +24,9 @@ public class Main {
         XDimension = Integer.parseInt(tokenizer.nextToken());
         minimalDistance = Integer.parseInt(tokenizer.nextToken());
         numberOfStations = Integer.parseInt(tokenizer.nextToken());
-        xOccupied = new boolean[XDimension];
-        yOccupied = new boolean[yDimension];
-        Arrays.fill(xOccupied, false);
-        Arrays.fill(yOccupied, false);
         junctions = new int[XDimension][yDimension];
         boolean[][] takenCrossroadsBools = new boolean[XDimension][yDimension];
-        int lowestCostCrossroad = Integer.MAX_VALUE;
+        lowestCostCrossroad = Integer.MAX_VALUE;
         for (int y = 0; y < yDimension; y++) {
             tokenizer = new StringTokenizer(reader.readLine());
 
